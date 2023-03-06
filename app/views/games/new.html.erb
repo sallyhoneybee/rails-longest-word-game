@@ -3,16 +3,9 @@
 
 <div class="container">
   <div class="row">
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
-    <h1 class="col-1">A</h1>
+    <% @random_letter.each do |letter| %>
+      <h1 class="col-1"><%= letter %></h1>
+     <% end %>
   </div>
 
 
