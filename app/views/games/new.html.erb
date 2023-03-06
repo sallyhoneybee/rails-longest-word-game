@@ -1,17 +1,22 @@
-<h1>Games#new</h1>
-<p>Find me in app/views/games/new.html.erb</p>
 
 <div class="container">
-  <div class="row">
+  <h1>New Game 👾</h1>
+  <div class="row justify-content-between">
     <% @random_letter.each do |letter| %>
       <h1 class="col-1"><%= letter %></h1>
      <% end %>
   </div>
 
 
-
-  <form action="/new" method="post">
-    <input type="text" name="word" placeholder="Create your word!">
-    <input type="submit" value="LONG">
+  <form class="form-group" action="/score" method="post" data-turbo="false">
+    <label for="word">What is the longest word you can find?</label>
+    <input class="form-control" type="text" id ="word" name="word" placeholder="Create your word!">
+    <input class="btn btn-primary btn-lg" type="submit" value="Submit">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :random, @random_letter %>
   </form>
+
+  <h3>
+    Current Score: <%= @current_score  %>
+  </h3>
 </div>
